@@ -1,0 +1,32 @@
+﻿@model CuentaModel
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+  <div class="card-header">
+    Editar Cuenta
+  </div>
+  <div class="card-body">
+    
+
+      <form asp-action="Eliminar" asp-controller="Mantenedor" method="post">
+
+       <input asp-for="IdCuenta" type="hidden" class="form-control">
+
+       <div class="alert alert-danger" role="alert">
+          ¿Desea eliminar la cuenta : @Html.DisplayTextFor(m => m.Numero) ?
+        </div>
+   
+      <button type="submit" class="btn btn-danger">Elimnar</button>
+      <a asp-action="Listar" asp-controller="Mantenedor" class="btn btn-warning">Volver a la lista</a>
+    </form>
+
+
+  </div>
+</div>
+
+
+

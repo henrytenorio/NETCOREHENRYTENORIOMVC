@@ -1,0 +1,29 @@
+﻿@model ReporteEstadoCuentaModel
+@{
+    ViewData["Title"] = "Buscar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+  <div class="card-header">
+      grid
+  </div>
+  <div class="card-body">
+    
+
+      <form asp-action="Buscar" asp-controller="Mantenedor" method="post">
+
+      <input asp-for="Cedula" type="hidden" class="form-control">
+       <input asp-for="Fecha" type="hidden" class="form-control">
+
+
+       <a asp-action="ListarEstadoCuenta" asp-controller="Mantenedor" ></a>
+       </form>
+
+        <hr />
+    
+       
+  </div>
+</div>
+

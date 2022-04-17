@@ -1,0 +1,43 @@
+﻿@model ClienteModel
+@{
+    ViewData["Title"] = "GuardarCliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+  <div class="card-header">
+    Crear Cuenta
+  </div>
+  <div class="card-body">
+    
+
+      <form asp-action="GuardarCliente" asp-controller="Mantenedor" method="post">
+      <div class="mb-3">
+        <label class="form-label">Cédula</label>
+        <input asp-for="IdCliente" type="text" class="form-control">
+        <span asp-validation-for="IdCliente" class="text-danger"></span>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input asp-for="Nombre" type="text" class="form-control">
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+      </div>
+       <div class="mb-3">
+        <label class="form-label">Direccion</label>
+        <input asp-for="Direccion" type="text" class="form-control">
+        <span asp-validation-for="Direccion" class="text-danger"></span>
+      </div>
+
+        <div class="mb-3">
+        <label class="form-label">Telefono</label>
+        <input asp-for="Telefono" type="text" class="form-control">
+        <span asp-validation-for="Telefono" class="text-danger"></span>
+      </div>
+
+      <button type="submit" class="btn btn-primary">GuardarCliente</button>
+      <a asp-action="ListarClientes" asp-controller="Mantenedor" class="btn btn-warning">Volver a la lista</a>
+    </form>
+
+
+  </div>
+</div>

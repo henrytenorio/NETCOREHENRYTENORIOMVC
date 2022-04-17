@@ -1,0 +1,62 @@
+﻿@model List<ReporteEstadoCuentaModel>
+@{
+    ViewData["Title"] = "ListarEstadoCuenta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+  <div class="card-header">
+    ESTADO DE CUENTAS
+  </div>
+  <div class="card-body">
+
+       <div>
+        <input type="date" />
+
+        <hr />
+        <label for="Name">Cedula</label>
+       <input type="text" name="cedula">
+        <a asp-action="Buscar" asp-controller="Mantenedor" class="btn btn-success" asp-route-IdCuenta= cedula > Buscar</a>
+        <hr />
+
+
+    </div>
+    <hr />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th>Cedula</th>
+                <th>Cliente</th>
+                <th>Numero Cuenta</th>
+                <th>Tipo</th>
+                <th>Fecha</th>
+                <th>Valor</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Cedula</td>
+                        <td>@item.Cliente</td>
+                        <td>@item.NumeroCuenta</td>
+                        <td>@item.tipoMovimiento</td>
+                       
+                        <td>@item.Fecha</td>
+                        <td>@item.Valor</td>
+                        <td>
+                          
+
+                        </td>
+                    </tr>
+
+                }
+        </tbody>
+    </table>
+
+    
+  </div>
+</div>
+
